@@ -1,15 +1,17 @@
 # Contribution [#]: [Issue Title]
 
-**Contribution Number:** [1 / 2 / 3]  
-**Student:** [Your Name]  
-**Issue:** [GitHub issue link]  
-**Status:** [Phase I / Phase II / Phase III / Phase IV] [In Progress / Complete]
+**Contribution Number:** 1 
+**Student:** Mansib Rahman  
+**Issue:** https://github.com/tinaudio/synth-setter/issues/51 
+**Status:** [Phase I] [Complete]
 
 ---
 
 ## Why I Chose This Issue
 
 [1-2 paragraphs explaining why this issue interests you, how it matches your skills/learning goals, what you hope to learn]
+
+I chose this issue because it matches my technical skills. I am proficient in Python, have experience building projects with jupyter notebooks, and am comfortable using Shell. The issue description is clear to me and I know exactly what bugs I need to fix. I liked the step by step description of the problems, provided by the owner of the codebase. These are problems that seem familiar to me as I have solved similar problems while working on personal projects.
 
 ---
 
