@@ -1,4 +1,4 @@
-# Contribution [#1]: [Issue Title]
+# Contribution [#1]: [MFlowCode]
 
 **Contribution Number:** 1 
 **Student:** Mansib Rahman  
@@ -9,8 +9,6 @@
 
 ## Why I Chose This Issue
 
-[1-2 paragraphs explaining why this issue interests you, how it matches your skills/learning goals, what you hope to learn]
-
 I chose this issue because it matches my technical skills. I am proficient in Python, have experience building projects with jupyter notebooks, and am comfortable using Shell. The issue description is clear to me and I know exactly what bugs I need to fix. I liked the step by step description of the problems, provided by the owner of the codebase. These are problems that seem familiar to me as I have solved similar problems while working on personal projects.
 
 ---
@@ -19,7 +17,7 @@ I chose this issue because it matches my technical skills. I am proficient in Py
 
 ### Problem Description
 
-The repetition of the verbose idiom in case_validator.py made the code hard to read and more prone to error. 
+The repetition of the verbose idiom "self.get("name", "F") == "T"" in case_validator.py made the code hard to read and more prone to error. 
 
 ### Expected Behavior
 
