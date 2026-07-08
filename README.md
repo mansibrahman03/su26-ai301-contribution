@@ -19,19 +19,19 @@ I chose this issue because it matches my technical skills. I am proficient in Py
 
 ### Problem Description
 
-[In your own words, what's broken or missing?]
+The repetition of the verbose idiom in case_validator.py made the code hard to read and more prone to error. 
 
 ### Expected Behavior
 
-[What should happen?]
+I expect the computer to know what to do when it is given a function like flag() and output the correct result.
 
 ### Current Behavior
 
-[What actually happens?]
+The terminal blanks and doesn't output anything when the flag() method.
 
 ### Affected Components
 
-[Which parts of the codebase are involved?]
+I will need to edit case_validator.py and ast_analyzer.py. Specifically, I will need to implemented a helper method called flag() in case_validator.py and edit the _build_local_param_map() method in ast_analyzer.py.
 
 ---
 
@@ -43,9 +43,6 @@ I did not face any problems during the environment setup process.
 
 ### Steps to Reproduce
 
-1. [Step 1]
-2. [Step 2]
-3. [Observed result]
 1. Open the file case_validator.py using the file path toolchain/mfc/case_validator.py
 2. Go to line 1487 in the check_chemistry() method
 3. Replace the value assigned to the chemistry variable with self.flag("chemistry")
@@ -67,7 +64,7 @@ I did not face any problems during the environment setup process.
 
 ### Proposed Solution
 
-[High-level description of your fix approach]
+I will add a flag() method in toolchain/mfc/case_validator.py that functions to replace the verbose idiom "self.get(x,F)==T" repeated in 134 places across the file. Additionally, I will update ast_analyzer.py to recognize calls made to flag().
 
 ### Implementation Plan
 
