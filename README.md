@@ -1,4 +1,4 @@
-# Contribution [#]: [Issue Title]
+# Contribution [#1]: [Issue Title]
 
 **Contribution Number:** 1 
 **Student:** Mansib Rahman  
@@ -39,19 +39,23 @@ I chose this issue because it matches my technical skills. I am proficient in Py
 
 ### Environment Setup
 
-[Notes on setting up your local development environment - challenges you faced, how you solved them]
+I did not face any problems during the environment setup process.
 
 ### Steps to Reproduce
 
 1. [Step 1]
 2. [Step 2]
 3. [Observed result]
+1. Open the file case_validator.py using the file path toolchain/mfc/case_validator.py
+2. Go to line 1487 in the check_chemistry() method
+3. Replace the value assigned to the chemistry variable with self.flag("chemistry")
+4. Reproduce the issue on your terminal by running the following: python3 toolchain/mfc/gen_case_constraints_docs.py | grep "ANALYZER"
 
 ### Reproduction Evidence
 
 - **Commit showing reproduction:** [Link to commit in your fork]
 - **Screenshots/logs:** [If applicable]
-- **My findings:** [What you discovered during reproduction]
+- **My findings:** The terminal blanks and doesn't output anything when the flag() method is called. I expect the computer to know what to do when it is given a function like flag() and output the correct result.
 
 ---
 
@@ -68,6 +72,16 @@ I chose this issue because it matches my technical skills. I am proficient in Py
 ### Implementation Plan
 
 Using UMPIRE framework (adapted):
+
+1. At the moment, case_validator.py reads boolean case flags with the verbose form self.get("name", "F") == "T" in 134 places. To clean this code up I want to implement a map function. However, I am prevented from doing so at the moment because of the hard coding in ast_analyzer.py in the _build_local_param_map() method in line 232: call.func.attr == "get". Thus, when the analyzer sees the word "flag", it doesn't recognize it and blanks out.
+
+2. My solution is to first make sure the analyzer recognizes flag() by adding a conditional statement in _build_local_param_map() in ast_analyzer.py. I will then implement a flag() method in case_validator.py that maps the verbose form to a simple boolean value.
+
+3. Files I will touch include:
+   - case_validator.py
+   - ast_analyzer.py
+     
+4. I will verify my approach works by calling flag() instead of get() in line 1487 of case_validator.py. If the analyzer correctly returns a value instead of blank, it successfully recognized the flag() function. I will also test the flag() method itself to ensure it correctly returns true or false.
 
 **Understand:** [Restate the problem]
 
