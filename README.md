@@ -1,9 +1,9 @@
-# Contribution [#1]: [MFlowCode]
+# Contribution #1: MFlowCode
 
 **Contribution Number:** 1 
 **Student:** Mansib Rahman  
-**Issue:** https://github.com/tinaudio/synth-setter/issues/51 
-**Status:** [Phase I] [Complete]
+**Issue:** https://github.com/MFlowCode/MFC/issues/1508 
+**Status:** Complete
 
 ---
 
@@ -58,7 +58,7 @@ I did not face any problems during the environment setup process.
 
 ### Analysis
 
-[Your analysis of the root cause - what's causing the issue?]
+There is an unnecessary repetition of the idiom "self.get(x,F)==T" in case_validator. To fix this, I must implement a flag() method. This method must also be recognized in other files. Specifically, I must edit the _build_local_param_map method in ast_analyzer to recognize flag().
 
 ### Proposed Solution
 
@@ -68,30 +68,20 @@ I will add a flag() method in toolchain/mfc/case_validator.py that functions to 
 
 Using UMPIRE framework (adapted):
 
-1. At the moment, case_validator.py reads boolean case flags with the verbose form self.get("name", "F") == "T" in 134 places. To clean this code up I want to implement a map function. However, I am prevented from doing so at the moment because of the hard coding in ast_analyzer.py in the _build_local_param_map() method in line 232: call.func.attr == "get". Thus, when the analyzer sees the word "flag", it doesn't recognize it and blanks out.
-
-2. My solution is to first make sure the analyzer recognizes flag() by adding a conditional statement in _build_local_param_map() in ast_analyzer.py. I will then implement a flag() method in case_validator.py that maps the verbose form to a simple boolean value.
-
-3. Files I will touch include:
-   - case_validator.py
-   - ast_analyzer.py
-     
-4. I will verify my approach works by calling flag() instead of get() in line 1487 of case_validator.py. If the analyzer correctly returns a value instead of blank, it successfully recognized the flag() function. I will also test the flag() method itself to ensure it correctly returns true or false.
-
-**Understand:** [Restate the problem]
+**Understand:** At the moment, case_validator.py reads boolean case flags with the verbose form self.get("name", "F") == "T" in 134 places. To clean this code up I want to implement a map function. However, I am prevented from doing so at the moment because of the hard coding in ast_analyzer.py in the _build_local_param_map() method in line 232: call.func.attr == "get". Thus, when the analyzer sees the word "flag", it doesn't recognize it and blanks out.
 
 **Match:** [What similar patterns/solutions exist in the codebase?]
 
 **Plan:** [Step-by-step implementation plan]
-1. [Modify file X to do Y]
-2. [Add function Z]
-3. [Update tests]
+1. My solution is to first make sure the analyzer recognizes flag() by adding a conditional statement in _build_local_param_map() in ast_analyzer.py.
+2. Next I will implement a flag() method in case_validator.py that maps the verbose form to a simple boolean value.
+3. Finally, I will write tests to ensure flag() functions as expected and is recognized in ast_analyzer.
 
 **Implement:** [Link to your branch/commits as you work]
 
 **Review:** [Self-review checklist - does it follow the project's contribution guidelines?]
 
-**Evaluate:** [How will you verify it works?]
+**Evaluate:** I will verify my approach works by calling flag() instead of get() in line 1487 of case_validator.py. If the analyzer correctly returns a value instead of blank, it successfully recognized the flag() function. I will also test the flag() method itself to ensure it correctly returns true or false.
 
 ---
 
