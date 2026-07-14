@@ -1,15 +1,15 @@
-# Contribution [#2]: [Kedro]
+# Contribution [#2]: [Great Expectations]
 
 **Contribution Number:** [2]  
 **Student:** [Mansib Rahman]  
-**Issue:** [https://github.com/kedro-org/kedro/issues/5653]  
+**Issue:** [https://github.com/fivetran/great_expectations/issues/11963]  
 **Status:** [Phase I]
 
 ---
 
 ## Why I Chose This Issue
 
-[First, the problem is clear. The issue explains exactly whats missing and why it is needed. Additionally, the issue doesn't require understanding the entire codebase. The issue is contained within a few files. Importantly, Kedro is primarily a python-based project, the language I am most proficient in. Furthermore, the issue aligns with the skills I have developed from past projects.]
+[First, the problem is clear. The issue explains exactly whats missing and why it is needed. Importantly, this is primarily a python-based project, the language I am most proficient in. Furthermore, the issue aligns with the skills I have developed from past projects. It also involves libraries and concepts I am familiar with.]
 
 ---
 
