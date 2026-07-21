@@ -48,7 +48,9 @@
 ### Reproduction Evidence
 
 - **Commit showing reproduction:** [Link to commit in your fork]
-- **Screenshots/logs:** <img width="2316" height="1104" alt="image" src="https://github.com/user-attachments/assets/d1ca131f-82eb-4e50-8a2f-c265b84a9cd0" />
+- **Screenshots/logs:**
+  <img width="1928" height="390" alt="image" src="https://github.com/user-attachments/assets/b9915049-42c7-4b95-92dd-4fb3493e9d8c" />
+  <img width="2316" height="1104" alt="image" src="https://github.com/user-attachments/assets/d1ca131f-82eb-4e50-8a2f-c265b84a9cd0" />
 
 - **My findings:** [What you discovered during reproduction]
 
