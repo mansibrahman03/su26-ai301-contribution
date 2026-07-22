@@ -1,9 +1,9 @@
-# Contribution [#2]: [Great Expectations]
+# Contribution #2: Great Expectations
 
-**Contribution Number:** [2]  
-**Student:** [Mansib Rahman]  
-**Issue:** [https://github.com/fivetran/great_expectations/issues/11963]  
-**Status:** [Phase I]
+**Contribution Number:** 2
+**Student:** Mansib Rahman
+**Issue:** https://github.com/fivetran/great_expectations/issues/11963  
+**Status:** Phase II Complete
 
 ---
 
