@@ -49,7 +49,7 @@ I experienced errors while setting up the necessary dependencies for the codebas
 
 - **Commit showing reproduction:** https://github.com/mansibrahman03/great_expectations/tree/fix-issue-11963
 - **Screenshots/logs:**
-  Existing implementations:
+  These are the existing implementations
   <img width="1872" height="1568" alt="image" src="https://github.com/user-attachments/assets/817e2242-9b4d-41d5-9778-097938e5fe22" />
   <img width="1928" height="390" alt="image" src="https://github.com/user-attachments/assets/b9915049-42c7-4b95-92dd-4fb3493e9d8c" />
   <img width="1940" height="974" alt="image" src="https://github.com/user-attachments/assets/18333b07-0472-4441-b684-f430944f829e" />
@@ -76,7 +76,7 @@ Using UMPIRE framework (adapted):
 
 **Match:** I can reuse the existing type comparison logic for ExpectColumnValuesToBeOfType and follow the structure of existing expectation classes in implementing ExpectColumnTypeToBe.
 
-**Plan:** [Step-by-step implementation plan]
+**Plan:**
 1. Create a new ExpectColumnTypeToBe expectation class
 2. Review and use the existing type comparison logic
 3. Add and update unit and integration tests
