@@ -37,13 +37,13 @@ This problem affects the type comparison logic used by Pandas, SQLAlchemy, and S
 
 ### Environment Setup
 
-[Notes on setting up your local development environment - challenges you faced, how you solved them]
+I experienced errors while setting up the necessary dependencies for the codebase. I used AI assistance to fix these issues.
 
 ### Steps to Reproduce
 
-1. [Step 1]
-2. [Step 2]
-3. [Observed result]
+1. Run the existing ExpectColumnValuesToBeOfType expectation on a SQL, Spark, or Pandas dataset
+2. Compare the behavior across the different backends
+3. Observe that the expectation performs schema-level validation on some backends and row-level validation on others
 
 ### Reproduction Evidence
 
@@ -52,7 +52,7 @@ This problem affects the type comparison logic used by Pandas, SQLAlchemy, and S
   <img width="1928" height="390" alt="image" src="https://github.com/user-attachments/assets/b9915049-42c7-4b95-92dd-4fb3493e9d8c" />
   <img width="2316" height="1104" alt="image" src="https://github.com/user-attachments/assets/d1ca131f-82eb-4e50-8a2f-c265b84a9cd0" />
 
-- **My findings:** [What you discovered during reproduction]
+- **My findings:** I observed that the expectation performs schema-level validation on some backends and row-level validation on others, resulting in inconsistent behavior across backends.
 
 ---
 
