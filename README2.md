@@ -9,7 +9,7 @@
 
 ## Why I Chose This Issue
 
-[First, the problem is clear. The issue explains exactly whats missing and why it is needed. Importantly, this is primarily a python-based project, the language I am most proficient in. Furthermore, the issue aligns with the skills I have developed from past projects. It also involves libraries and concepts I am familiar with.]
+First, the problem is clear. The issue explains exactly whats missing and why it is needed. Importantly, this is primarily a python-based project, the language I am most proficient in. Furthermore, the issue aligns with the skills I have developed from past projects. It also involves libraries and concepts I am familiar with.
 
 ---
 
@@ -17,19 +17,19 @@
 
 ### Problem Description
 
-[In your own words, what's broken or missing?]
+Right now, the ExpectColumnValuesToBeOfType expectation two different kinds of checks depending on the backend. On Pandas, it goes through every value for every column and validates its type. On SQLAlchemy and Spark it only checks every column's declared type. Thus, one class is checking for completely different metrics depending on the backend.
 
 ### Expected Behavior
 
-[What should happen?]
+I expect for there to be 2 separate expectations: one that checks the declared type of the entire column and another that checks every row.
 
 ### Current Behavior
 
-[What actually happens?]
+At the moment, the same expectation is responsible for either schema-level type validation or row-level type validation, depending on the backend. 
 
 ### Affected Components
 
-[Which parts of the codebase are involved?]
+This problem affects the type comparison logic used by Pandas, SQLAlchemy, and Spark. This can result in inconsistent behavior across data sources.
 
 ---
 
