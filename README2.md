@@ -41,7 +41,7 @@ I experienced errors while setting up the necessary dependencies for the codebas
 
 ### Steps to Reproduce
 
-1. Run the existing ExpectColumnValuesToBeOfType expectation on a SQL, Spark, or Pandas dataset
+1. Run the existing ExpectColumnValuesToBeOfType expectation on Pandas, SQL, and Spark datasets
 2. Compare the behavior across the different backends
 3. Observe that the expectation performs schema-level validation on some backends and row-level validation on others
 
@@ -49,10 +49,12 @@ I experienced errors while setting up the necessary dependencies for the codebas
 
 - **Commit showing reproduction:** https://github.com/mansibrahman03/great_expectations/tree/fix-issue-11963
 - **Screenshots/logs:**
+  Existing implementations:
+  <img width="1872" height="1568" alt="image" src="https://github.com/user-attachments/assets/817e2242-9b4d-41d5-9778-097938e5fe22" />
   <img width="1928" height="390" alt="image" src="https://github.com/user-attachments/assets/b9915049-42c7-4b95-92dd-4fb3493e9d8c" />
-  <img width="2316" height="1104" alt="image" src="https://github.com/user-attachments/assets/d1ca131f-82eb-4e50-8a2f-c265b84a9cd0" />
+  <img width="1940" height="974" alt="image" src="https://github.com/user-attachments/assets/18333b07-0472-4441-b684-f430944f829e" />
 
-- **My findings:** I observed that the expectation performs schema-level validation on some backends and row-level validation on others, resulting in inconsistent behavior across backends.
+- **My findings:** The same expectation performs schema-level validation on some backends and row-level validation on others, resulting in inconsistent behavior across backends.
 
 ---
 
