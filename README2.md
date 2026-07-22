@@ -47,7 +47,7 @@ I experienced errors while setting up the necessary dependencies for the codebas
 
 ### Reproduction Evidence
 
-- **Commit showing reproduction:** [Link to commit in your fork]
+- **Commit showing reproduction:** https://github.com/mansibrahman03/great_expectations/tree/fix-issue-11963
 - **Screenshots/logs:**
   <img width="1928" height="390" alt="image" src="https://github.com/user-attachments/assets/b9915049-42c7-4b95-92dd-4fb3493e9d8c" />
   <img width="2316" height="1104" alt="image" src="https://github.com/user-attachments/assets/d1ca131f-82eb-4e50-8a2f-c265b84a9cd0" />
@@ -60,30 +60,35 @@ I experienced errors while setting up the necessary dependencies for the codebas
 
 ### Analysis
 
-[Your analysis of the root cause - what's causing the issue?]
+The issue is caused by the way the ExpectColumnValuesToBeOfType expectation is implemented. At the moment, it can make either schema-level or row-level type checks depending on the backend.
 
 ### Proposed Solution
 
-[High-level description of your fix approach]
+Create a separate ExpectColumnTypeToBe expectation that only performs schema-level validation. The existing ExpectColumnValuesToBeOfType expectation will only perform row-level validation.
 
 ### Implementation Plan
 
 Using UMPIRE framework (adapted):
 
-**Understand:** [Restate the problem]
+**Understand:** The current implementation of the ExpectColumnValuesToBeOfType expectation causes inconsistent behavior across different backends.
 
-**Match:** [What similar patterns/solutions exist in the codebase?]
+**Match:** I can reuse the existing type comparison logic for ExpectColumnValuesToBeOfType and follow the structure of existing expectation classes in implementing ExpectColumnTypeToBe.
 
 **Plan:** [Step-by-step implementation plan]
-1. [Modify file X to do Y]
-2. [Add function Z]
-3. [Update tests]
+1. Create a new ExpectColumnTypeToBe expectation class
+2. Review and use the existing type comparison logic
+3. Add and update unit and integration tests
+4. Verify existing expectations work correctly
 
-**Implement:** [Link to your branch/commits as you work]
+**Implement:** https://github.com/mansibrahman03/great_expectations/tree/fix-issue-11963
 
-**Review:** [Self-review checklist - does it follow the project's contribution guidelines?]
+**Review:** 
+- Ensure the implementation follows the project's coding style and contribution guidelines
+- Ensure implementation passes test requirements
 
-**Evaluate:** [How will you verify it works?]
+**Evaluate:** 
+- Run the relevant unit and integration tests to confirm that the new expectation and existing expectations behave correctly.
+- Ensure existing functionality is not broken.
 
 ---
 
