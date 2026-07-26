@@ -44,20 +44,24 @@ I experienced errors while setting up the necessary dependencies for the codebas
 
 ### Steps to Reproduce
 
-1. Run the existing ExpectColumnValuesToBeOfType expectation on Pandas, SQL, and Spark datasets
-2. Compare the behavior across the different backends
-3. Observe that the expectation performs schema-level validation on some backends and row-level validation on others
+1. From the root of the directory, go to tests/integration/data_sources_and_expectations/expectations/test_expect_column_values_to_be_of_type.py 
+2. Add a print statement that prints the test result from test_success_for_type__int()
+3. Run the following command in your terminal: pytest tests/integration/data_sources_and_expectations/expectations/test_expect_column_values_to_be_of_type.py \ -k "test_success_for_type__INTEGER" -s
+4. Observe the output
 
 ### Reproduction Evidence
 
 - **Commit showing reproduction:** https://github.com/mansibrahman03/great_expectations/tree/fix-issue-11963
 - **Screenshots/logs:**
-  These are the existing implementations
-  <img width="1872" height="1568" alt="image" src="https://github.com/user-attachments/assets/817e2242-9b4d-41d5-9778-097938e5fe22" />
-  <img width="1928" height="390" alt="image" src="https://github.com/user-attachments/assets/b9915049-42c7-4b95-92dd-4fb3493e9d8c" />
-  <img width="1940" height="974" alt="image" src="https://github.com/user-attachments/assets/18333b07-0472-4441-b684-f430944f829e" />
+  Reproduction code:
+  <img width="1292" height="310" alt="image" src="https://github.com/user-attachments/assets/a197e2ef-00e8-4ef6-8e7f-e6d7e3a42d04" />
+  Result 1:
+  <img width="894" height="1144" alt="image" src="https://github.com/user-attachments/assets/67cf5d04-40e4-4104-a79b-5d58eb86b46a" />
+  Result 2:
+  <img width="862" height="830" alt="image" src="https://github.com/user-attachments/assets/3df2ee84-1adf-4e73-b135-5775c331d19f" />
 
-- **My findings:** The same expectation performs schema-level validation on some backends and row-level validation on others, resulting in inconsistent behavior across backends.
+
+- **My findings:** The ExpectColumnValuesToBeOfType performs schema-level validation on one pandas dataset and row-level validation on another.
 
 ---
 
