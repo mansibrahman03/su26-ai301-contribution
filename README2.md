@@ -61,7 +61,7 @@ I experienced errors while setting up the necessary dependencies for the codebas
   <img width="862" height="830" alt="image" src="https://github.com/user-attachments/assets/3df2ee84-1adf-4e73-b135-5775c331d19f" />
 
 
-- **My findings:** The ExpectColumnValuesToBeOfType performs schema-level validation on one pandas dataset and row-level validation on another.
+- **My findings:** The ExpectColumnValuesToBeOfType performs schema-level validation on one pandas dataset (second screenshot) and row-level validation on another (third screenshot).
 
 ---
 
