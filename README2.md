@@ -105,18 +105,21 @@ Using UMPIRE framework (adapted):
 
 ### Unit Tests
 
-- [ ] Test case 1: [Description]
-- [ ] Test case 2: [Description]
-- [ ] Test case 3: [Description]
+- [ ] test_expectation_is_registered_and_constructible: the new expectation loads and can be created without errors
+- [ ] test_validate_pandas_success: when a column's type matches what we asked for, it passes and reports the type it saw
+- [ ] test_validate_pandas_failure_returns_schema_level_result: when the type doesn't match, it fails but still just reports the type it saw without row-level details
+- [ ] test_validate_pandas_object_column_is_schema_level: a pandas text/mixed object column is checked by its overall type, not row by row
+- [ ] test_prescriptive_renderer_template: the human-readable message reads like "column type must be X"
 
 ### Integration Tests
 
-- [ ] Integration scenario 1
-- [ ] Integration scenario 2
+- [ ] Integration scenario 1: Gives just the column's type on pandas, SQL databases, and Spark
+- [ ] Integration scenario 2: A pandas object column is judged by its declared type only, with no row-level details
 
 ### Manual Testing
 
-[What you tested manually and results]
+<img width="2166" height="194" alt="image" src="https://github.com/user-attachments/assets/3e0e55b9-b225-49fc-b84b-d1e2a6cce247" />
+
 
 ---
 
