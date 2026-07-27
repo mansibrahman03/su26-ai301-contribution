@@ -61,7 +61,7 @@ I experienced errors while setting up the necessary dependencies for the codebas
   <img width="862" height="830" alt="image" src="https://github.com/user-attachments/assets/3df2ee84-1adf-4e73-b135-5775c331d19f" />
 
 
-- **My findings:** The ExpectColumnValuesToBeOfType performs schema-level validation on one pandas dataset (second screenshot) and row-level validation on another (third screenshot).
+- **My findings:** The ExpectColumnValuesToBeOfType performs row-level validation on one pandas dataset (second screenshot) and schema-level validation on another (third screenshot).
 
 ---
 
@@ -125,20 +125,35 @@ Using UMPIRE framework (adapted):
 
 ## Implementation Notes
 
-### Week [X] Progress
+### Week [1] Progress
 
-[What you built this week, challenges faced, decisions made]
+I selected the issue, using AI to help me find open source repos with issues matching my technical skills.
 
-### Week [Y] Progress
+### Week [2] Progress
 
-[Continue documenting as you work]
+I set up my environment including installing necessary dependencies to ensure I can run files in the codebase comfortably. I looked through files relevant to the issue to understand what I will need to edit. I then reproduced the issue. Based on my findings, I drafted a solution plan.
+
+### Week [3] Progress
+
+I implemented my solution which included creating a new file that implemented the new expectation. I also created integration and unit tests for this new expectation.
 
 ### Code Changes
 
-- **Files modified:** [List]
-- **Key commits:** [Links to important commits]
-- **Approach decisions:** [Why you chose certain approaches]
+- **Files modified:** 
+great_expectations/expectations/core/expect_column_type_to_be.py
+tests/integration/data_sources_and_expectations/expectations/test_expect_column_type_to_be.py
+great_expectations/expectations/__init__.py
+great_expectations/expectations/core/__init__.py
+tests/expectations/core/test_expect_column_type_to_be.py
 
+- **Key commits:** 
+https://github.com/mansibrahman03/great_expectations/commit/b1fba4f793dc2529e4a8915de9c9b47666160772
+https://github.com/mansibrahman03/great_expectations/commit/ce6c615c5ebbf198772afa5904276f4989ef2580
+
+- **Approach decisions:** 
+Built ExpectColumnTypeToBe as a BatchExpectation (not ColumnMapExpectation) so it always checks the column's declared type at the schema level and returns a single {"observed_value": ...}, never row-by-row
+Reused the existing _validate_pandas / _validate_sqlalchemy / _validate_spark logic and the table.column_types metric to stay consistent with ExpectColumnValuesToBeOfType
+Left that old expectation untouched, since restricting it to Pandas is a separate breaking change.
 ---
 
 ## Pull Request
