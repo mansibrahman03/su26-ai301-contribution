@@ -151,9 +151,7 @@ https://github.com/mansibrahman03/great_expectations/commit/b1fba4f793dc2529e4a8
 https://github.com/mansibrahman03/great_expectations/commit/ce6c615c5ebbf198772afa5904276f4989ef2580
 
 - **Approach decisions:** 
-Built ExpectColumnTypeToBe as a BatchExpectation (not ColumnMapExpectation) so it always checks the column's declared type at the schema level and returns a single {"observed_value": ...}, never row-by-row
-Reused the existing _validate_pandas / _validate_sqlalchemy / _validate_spark logic and the table.column_types metric to stay consistent with ExpectColumnValuesToBeOfType
-Left that old expectation untouched, since restricting it to Pandas is a separate breaking change.
+Built ExpectColumnTypeToBe as a BatchExpectation (not ColumnMapExpectation) so it always checks the column's declared type at the schema level and returns a single {"observed_value": ...}, never row-by-row. Reused the existing _validate_pandas / _validate_sqlalchemy / _validate_spark logic and the table.column_types metric to stay consistent with ExpectColumnValuesToBeOfType. Left that old expectation untouched, since restricting it to Pandas is a separate breaking change.
 ---
 
 ## Pull Request
