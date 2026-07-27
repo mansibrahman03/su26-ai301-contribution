@@ -161,15 +161,15 @@ Built ExpectColumnTypeToBe as a BatchExpectation (not ColumnMapExpectation) so i
 
 ## Pull Request
 
-**PR Link:** [GitHub PR URL when submitted]
+**PR Link:** https://github.com/fivetran/great_expectations/pull/12007
 
-**PR Description:** [Draft or final PR description - much of the content above can be adapted]
+**PR Description:** This PR adds a new expectation, ExpectColumnTypeToBe, that checks a column's declared data type at the schema level. It works the same way across every backend — pandas, SQL databases, and Spark — and always returns a simple result of just {"observed_value": ""}, with no row-level details. It reuses the existing type-matching logic from ExpectColumnValuesToBeOfType and the table.column_types metric. Unit and integration tests were added to confirm expected behavior. This PR does not change the implementation for ExpectColumnValuesToBeOfType.
 
 **Maintainer Feedback:**
 - [Date]: [Summary of feedback received]
 - [Date]: [How you addressed it]
 
-**Status:** [Awaiting review / Iterating / Approved / Merged]
+**Status:** Awaiting review
 
 ---
 
