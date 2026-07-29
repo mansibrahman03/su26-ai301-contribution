@@ -136,11 +136,12 @@ I selected the issue, using AI to help me find open source repos with issues mat
 
 ### Week [2] Progress
 
-I set up my environment including installing necessary dependencies to ensure I can run files in the codebase comfortably. I looked through files relevant to the issue to understand what I will need to edit. I then reproduced the issue. Based on my findings, I drafted a solution plan.
+I set up my environment including installing necessary dependencies to ensure I can run files in the codebase comfortably. I looked through files relevant to the issue to understand what I will need to edit. I then reproduced the issue. The only file I modified in the reproduction process is test_expect_column_values_to_be_of_type.py. Based on my findings, I drafted a solution plan.
 
 ### Week [3] Progress
 
-I implemented my solution which included creating a new file that implemented the new expectation. I also created integration and unit tests for this new expectation.
+I implemented my solution which included creating a new file that implemented the new expectation. I also created integration and unit tests for this new expectation. In implementing the solution, I modified 2 __init__.py files, one under the "expectations" folder and the other under "core". A also added 3 new files: expect_column_type_to_be.py, and 2 test_expect_column_type_to_be.py files (1 integration, 1 unit).
+Commit hashes: 8af63b816736bd7c1a9fcea475605eeac112af78, 63609599b684a89ba65329960b1f284c9658f5e7
 
 ### Code Changes
 
@@ -177,15 +178,15 @@ Built ExpectColumnTypeToBe as a BatchExpectation (not ColumnMapExpectation) so i
 
 ### Technical Skills Gained
 
-[What you learned technically]
+The most valuable skill I gained was using AI to build and write tests.
 
 ### Challenges Overcome
 
-[What was hard and how you solved it]
+One obstacle I faced was setting up all the dependencies. I was getting a lot of errors initially while following the contribution instructions. With AI assistance, I was able to resolve those errors. The second challenge was understanding the codebase. Luckily my issue was localized and did not require understanding everything.
 
 ### What I'd Do Differently Next Time
 
-[Reflection on your process]
+I would use Claude credits more efficiently.
 
 ---
 
