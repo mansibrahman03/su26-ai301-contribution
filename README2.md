@@ -192,6 +192,5 @@ I would use Claude credits more efficiently.
 
 ## Resources Used
 
-- [Link to helpful documentation]
-- [Tutorial or Stack Overflow post that helped]
-- [GitHub issues or discussions that helped]
+- https://github.com/fivetran/great_expectations/blob/develop/CONTRIBUTING.md
+- https://github.com/fivetran/great_expectations/blob/develop/DEVELOPMENT.md
